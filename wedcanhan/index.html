@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trần Quốc Khánh - CV Cá Nhân</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Ubuntu&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <style>
+    :root {
+      --bg-color: #000;
+      --text-color: #fff;
+      --accent: #00ffe0;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      overflow-x: hidden;
+      min-height: 100vh;
+      position: relative;
+      padding: 40px 20px;
+    }
+    h1 {
+      font-size: 42px;
+      color: var(--accent);
+      text-align: center;
+      margin-bottom: 10px;
+      text-shadow: 0 0 15px var(--accent);
+    }
+    .subtitle {
+      text-align: center;
+      font-size: 18px;
+      margin-bottom: 30px;
+      color: #ccc;
+    }
+    .avatar {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      margin: 20px auto;
+      display: block;
+      border: 4px solid var(--accent);
+      box-shadow: 0 0 20px var(--accent);
+    }
+    .music-player {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      z-index: 999;
+    }
+    .disc {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: radial-gradient(circle, #fff, #888);
+      animation: spin 5s linear infinite;
+      box-shadow: 0 0 10px #fff;
+    }
+    @keyframes spin {
+      from { transform: rotate(0); }
+      to { transform: rotate(360deg); }
+    }
+    .social-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      margin: 40px 0;
+    }
+    .social-links a {
+      width: 320px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      background: var(--accent);
+      color: #000;
+      font-weight: bold;
+      padding: 14px 20px;
+      border-radius: 30px;
+      font-size: 18px;
+      text-decoration: none;
+      box-shadow: 0 0 15px var(--accent);
+      transition: all 0.3s ease;
+    }
+    .social-links a:hover {
+      transform: scale(1.05);
+      background: #00ccc0;
+    }
+    .skills {
+      max-width: 900px;
+      margin: 60px auto;
+      background: rgba(255,255,255,0.05);
+      border: 2px solid var(--accent);
+      border-radius: 15px;
+      padding: 30px;
+      box-shadow: 0 0 20px var(--accent);
+    }
+    .skills h2 {
+      font-size: 28px;
+      text-align: center;
+      color: var(--accent);
+      margin-bottom: 20px;
+    }
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      font-family: 'Ubuntu', sans-serif;
+    }
+    .bubble-wrapper {
+      position: relative;
+      margin: 60px auto;
+      max-width: 1000px;
+      padding: 40px;
+      border-radius: 30px;
+      background: radial-gradient(circle at top left, rgba(0,255,255,0.1), rgba(255,255,255,0.03));
+      border: 2px solid var(--accent);
+      box-shadow: 0 0 30px var(--accent), inset 0 0 20px rgba(0,255,224,0.3);
+      text-align: center;
+    }
+    .bubble-wrapper h2 {
+      color: var(--accent);
+      font-size: 28px;
+      margin-bottom: 20px;
+      text-shadow: 0 0 10px var(--accent);
+    }
+    .skill-box {
+      background: rgba(255,255,255,0.08);
+      padding: 15px 20px;
+      border-radius: 10px;
+      border-left: 4px solid var(--accent);
+      font-size: 16px;
+      box-shadow: 0 0 10px rgba(0,255,224,0.3);
+    }
+    .review-section {
+      max-width: 800px;
+      margin: auto;
+    }
+    .review-section h2 {
+      text-align: center;
+      color: var(--accent);
+      margin-bottom: 20px;
+    }
+    .review {
+      background: rgba(255,255,255,0.05);
+      border-left: 4px solid var(--accent);
+      padding: 15px 20px;
+      margin-bottom: 15px;
+      border-radius: 10px;
+    }
+    .review span {
+      display: block;
+      font-weight: bold;
+      margin-top: 8px;
+      color: #aaa;
+    }
+    #stars {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      pointer-events: none;
+    }
+    .star {
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      background: white;
+      border-radius: 50%;
+      animation: fall linear infinite;
+    }
+    @keyframes fall {
+      0% { transform: translateY(-10px); opacity: 0.8; }
+      100% { transform: translateY(100vh); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+  <div id="stars"></div>
+  <img src="../ANHCUAKHANH.jpg" alt="Avatar" class="avatar">
+  <h1>Trần Quốc Khánh</h1>
+  <p class="subtitle">Sinh viên ngành Mạng máy tính & Truyền thông dữ liệu | Yêu thích bảo mật | Đam mê công nghệ</p>
+     <div class="bubble-wrapper">
+    <h2>Liên Kết Mạng Xã Hội</h2>
+  <div class="social-links">
+    <a href="https://zalo.me/0376447206" target="_blank"><i class="fas fa-comment-dots"></i> Zalo</a>
+    <a href="https://www.facebook.com/quoc.khanh.83590?locale=vi_VN" target="_blank"><i class="fab fa-facebook"></i> Facebook</a>
+    <a href="https://mobile.capcutshare.com/s/Zs8mXHUuY/" target="_blank"><i class="fas fa-video"></i> CapCut</a>
+    <a href="https://www.tiktok.com/@aithaykhanhkhong?_t=ZS-8y05nSnZAZj&_r=1" target="_blank"><i class="fab fa-tiktok"></i> TikTok</a>
+    <a href="https://locket.cam/tranquockhanh2807" target="_blank"><i class="fas fa-heart"></i> Locket</a>
+  </div>
+
+  <div class="skills">
+    <h2>Kỹ năng & Sở thích</h2>
+    <div class="skills-grid">
+      <div class="skill-box">🌐 Thiết kế và quản trị mạng máy tính</div>
+      <div class="skill-box">🛡️ Quan tâm đến bảo mật & an toàn thông tin</div>
+      <div class="skill-box">💻 Lập trình C, C++, HTML, PHP</div>
+      <div class="skill-box">📊 Thành thạo Microsoft Office (MOS)</div>
+      <div class="skill-box">🎨 Làm video trên CapCut, thiết kế Canva</div>
+      <div class="skill-box">📱 Quản lý hệ thống web bán like & mạng xã hội</div>
+    </div>
+  </div>
+
+  <div class="review-section">
+    <h2>Đánh giá từ người dùng</h2>
+    <div class="review">"Khánh là sinh viên có tinh thần học hỏi mạnh mẽ và rất nghiêm túc trong học tập."<span>- Thầy Nam, Giảng viên CNTT</span></div>
+    <div class="review">"Website cá nhân của Khánh rất sáng tạo và chuyên nghiệp."<span>- Minh, Designer</span></div>
+    <div class="review">"Tôi rất ngưỡng mộ Khánh vì đam mê công nghệ và khả năng tự học tuyệt vời."<span>- Linh, SV BKHN</span></div>
+    <div class="review">"Khánh rất nhiệt tình trong các dự án nhóm, luôn giúss team đạt kết quả cao."<span>- Thành, Leader Dự án</span></div>
+    <div class="review">"Anh Khánh hỗ trợ em rất nhiều trong việc học và làm website."<span>- Quýnh, Em khoá dưới</span></div>
+    <div class="review">"Là sinh viên rất năng động, đam mê kỹ thuật."<span>- Nguyên, Cựu SV CNTT</span></div>
+    <div class="review">"Khánh rất thân thiện, sâu sát và cứng rất hài hước."<span>- An, Lớp trưởng</span></div>
+    <div class="review">"Trang web của Khánh làm tôi ngạc nhiên, quá đẹp và chất."<span>- Hoa, Giáo viên Tin</span></div>
+    <div class="review">"Luôn sáng tạo và biết khai thác công nghệ hiệu quả."<span>- Dũng, Freelancer</span></div>
+    <div class="review">"Khánh không chỉ giỏi về web mà còn rất giỏi giãi thích cho người khác hiểu."<span>- Thanh, Friend</span></div>
+  </div>
+
+
+  <script>
+    const starContainer = document.getElementById("stars");
+    for (let i = 0; i < 120; i++) {
+      const star = document.createElement("div");
+      star.className = "star";
+      star.style.left = Math.random() * 100 + "vw";
+      star.style.animationDuration = (Math.random() * 4 + 2) + "s";
+      star.style.opacity = Math.random();
+      star.style.top = Math.random() * 100 + "vh";
+      starContainer.appendChild(star);
+    }
+  </script>
+</body>
+</html>
